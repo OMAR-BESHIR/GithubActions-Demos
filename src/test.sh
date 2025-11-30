@@ -3,7 +3,8 @@
 
 EXPECTED="Hello, Test!"
 
-OUTPUT=$(node -p "require('./src/app.js')('Test')")
+# الحل 1: استخدم المسار الكامل
+OUTPUT=$(node -e "console.log(require('./src/app.js')('Test'))")
 
 if [ "$OUTPUT" == "$EXPECTED" ]; then
   echo "✅ Test passed!"
